@@ -374,8 +374,15 @@ if st.session_state.result:
         st.link_button("リュウジのバズレシピ", url_ryuji)
 
     with col2:
-        url_macaroni = f"https://www.youtube.com/results?search_query={encoded}+macaroni+レシピ"
-        st.link_button("macaroni | マカロニ", url_macaroni)
+    url_macaroni = f"https://www.youtube.com/@macaroni_recipe/search?query={encoded}"
+    st.markdown(
+        f'<a href="{url_macaroni}" target="_blank" '
+        'style="display:block; padding:0.7em 1em; background:#f0f0f0; '
+        'border-radius:10px; text-align:center; text-decoration:none; '
+        'font-weight:600; color:#333;">macaroni | マカロニ</a>',
+        unsafe_allow_html=True
+    )
+
 
 else:
     st.info("まだルーレットは回っていません。")
