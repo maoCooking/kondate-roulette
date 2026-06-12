@@ -352,30 +352,30 @@ if st.session_state.result:
 
     # ===== 再抽選ボタン（水色） =====
     reroll = st.button(
-    "やっぱ違うにゃ😺…もう一回！🎯",
-    key="reroll",
-    type="secondary"
-)
+        "やっぱ違うにゃ😺…もう一回！🎯",
+        key="reroll",
+        type="secondary"
+    )
 
     if reroll:
         st.session_state.result = reroll_menu(result, current_temp)
         st.rerun()
 
     # ==============================
-# レシピ検索リンク
-# ==============================
-encoded = urllib.parse.quote(result)
-st.write("レシピ検索はこちら👇")
+    # レシピ検索リンク（ここは if の中に入れる）
+    # ==============================
+    encoded = urllib.parse.quote(result)
+    st.write("レシピ検索はこちら👇")
 
-col1, col2 = st.columns(2)
+    col1, col2 = st.columns(2)
 
-with col1:
-    url_ryuji = f"https://www.youtube.com/results?search_query={encoded}+リュウジ"
-    st.link_button("リュウジのバズレシピ", url_ryuji)
+    with col1:
+        url_ryuji = f"https://www.youtube.com/results?search_query={encoded}+リュウジ"
+        st.link_button("リュウジのバズレシピ", url_ryuji)
 
-with col2:
-    url_macaroni = f"https://www.youtube.com/@macaroni_recipe/search?query={encoded}"
-    st.link_button("macaroni | マカロニ", url_macaroni)
+    with col2:
+        url_macaroni = f"https://www.youtube.com/results?search_query={encoded}+macaroni+レシピ"
+        st.link_button("macaroni | マカロニ", url_macaroni)
 
 else:
     st.info("まだルーレットは回っていません。")
