@@ -255,7 +255,7 @@ if st.session_state.result:
 
     # macaroni（チャンネル内検索＋HTMLで安定）
     with col2:
-        url_macaroni = f"https://www.youtube.com/@macaroni_recipe/search?query={encoded}"
+        url_macaroni = f"https://www.youtube.com/results?search_query={encoded}+macaroni+レシピ"
         st.markdown(
             f'<a href="{url_macaroni}" target="_blank" '
             'style="display:block; padding:0.7em 1em; background:#f0f0f0; '
